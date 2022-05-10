@@ -7,7 +7,6 @@ export class LRKeyInputHandler implements IInputHandler {
     this.wasLeftArrowPushed = false;
     this.wasRightArrowPushed = false;
     window.addEventListener("keydown", (e) => {
-      // 'keydown' event handler: what happens when we press a left/right key?
       if (e.key === "ArrowLeft") {
         // if left key was pressed, set 'wasLeftArrowPushed' variable to true
         this.wasLeftArrowPushed = true;
@@ -24,10 +23,10 @@ export class LRKeyInputHandler implements IInputHandler {
     return this.wasRightArrowPushed; // returns current state of right arrow
   }
   resetLeftMove() {
-    this.wasLeftArrowPushed = false; // we've already turned left, so left-arrow state now === false
+    this.wasLeftArrowPushed = false; // already turned left, so left-arrow state now === false
   }
   resetRightMove() {
-    this.wasRightArrowPushed = false; // we've already turned right, so right-arrow state now === false
+    this.wasRightArrowPushed = false; // already turned right, so right-arrow state now === false
   }
 }
 export default LRKeyInputHandler;

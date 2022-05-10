@@ -2,10 +2,10 @@ import IWorldView from "./IWorldView;";
 
 let snek = new Snake();
 export class WorldModel {
-  private new_snake; // variable for our 'Snake' object
+  private new_snake; // variable for the 'Snake' object
   private _width; // width of game world floor
   private _height; // height of game world floor
-  private worldView: IWorldView; // obj to view our world with
+  private worldView: IWorldView; // obj to view the world with
   constructor(snek, w, h) {
     this.new_snake = snek;
     this._width = w;
@@ -14,10 +14,10 @@ export class WorldModel {
   }
   set view(world_view: IWorldView) {
     this.worldView = world_view;
-  } // sets our 'world_view' for the game world to the given view
+  } // sets the 'world_view' for the game world to the given view
   get snake() {
     return this.new_snake;
-  } // returns our 'Snake' object
+  } // returns the 'Snake' object
   get width() {
     return this._width;
   } // returns the game world width

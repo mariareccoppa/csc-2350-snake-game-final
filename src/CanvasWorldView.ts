@@ -12,7 +12,6 @@ export class CanvasWorldView implements IWorldView {
     // ! -> this assignment is NOT null
     document.body.appendChild(this.worldCanvas); // append our canvas element to page body
   }
-  // TODO: we've gotten up to page 4, step 5. Continue from there next time
   display(new_world: WorldModel): void {
     // worldCanvas.width: (scalingFactor * new_world.width()) -> canvas width is scale factor times the given world's width
     this.worldCanvas.width = this.scalingFactor * new_world.width();

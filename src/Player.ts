@@ -26,7 +26,6 @@ export class AvoidWallsPlayer extends Player {
     ) {
       this.controller.turnSnakeLeft();
     }
-    // TODO: consider other possibilities where snake could crash into a wall and fix them
   }
 }
 
