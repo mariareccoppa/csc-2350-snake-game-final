@@ -1,4 +1,5 @@
-import IWorldView from "./IWorldView;";
+import IWorldView from "./IWorldView";
+import Snake from "./Snake";
 
 let snek = new Snake();
 export class WorldModel {
