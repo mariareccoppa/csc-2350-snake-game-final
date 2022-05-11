@@ -7,10 +7,10 @@ export class CanvasWorldView implements IWorldView {
   private context: CanvasRenderingContext2D; // 'context' -> provides 2D rendering context for drawing surface of a canvas element
   constructor(scalingFactor: number) {
     this.scalingFactor = scalingFactor; // 'scalingFactor': # of pixels squared that each model grid coordinate represents
-    this.worldCanvas = document.createElement("canvas"); // 'worldCanvas': create a new canvas element for our game
-    this.context = this.worldCanvas.getContext("2d")!; // 'context': 2D context ("drawing paper") for our canvas element.
+    this.worldCanvas = document.createElement("canvas"); // 'worldCanvas': create a new canvas element for the game
+    this.context = this.worldCanvas.getContext("2d")!; // 'context': 2D context ("drawing paper") for the canvas element.
     // ! -> this assignment is NOT null
-    document.body.appendChild(this.worldCanvas); // append our canvas element to page body
+    document.body.appendChild(this.worldCanvas); // append the canvas element to page body
   }
   display(new_world: WorldModel): void {
     // worldCanvas.width: (scalingFactor * new_world.width()) -> canvas width is scale factor times the given world's width
@@ -23,6 +23,6 @@ export class CanvasWorldView implements IWorldView {
     let y = new_world.snake().y_value(); // snake's current position's y-value
     this.context.fillStyle = "green"; // green snake boi
     this.context.lineWidth = 10; // so we can see the lines
-    this.context.fillRect(x, y, _width_, _height_); // fill a rectangle that has the width and height of the scaling factor of our snake's snake
+    this.context.fillRect(x, y, _width_, _height_); // fill a rectangle that has the width and height of the scaling factor of the snake's snake
   }
 }

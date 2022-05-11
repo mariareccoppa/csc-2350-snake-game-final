@@ -4,7 +4,7 @@ import Snake from "./Snake";
 let world = new WorldModel(new Snake(), 0, 0); // new world for the game
 export class SnakeController {
   private slitherer; // Cool snake
-  private snakeWorld; // our game world
+  private snakeWorld; // game world
   constructor(_snake, world) {
     this.slitherer = _snake; // assigns the cool snake to the game snake
     this.snakeWorld = world; // assigns the game world to the game world

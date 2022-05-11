@@ -3,7 +3,7 @@ class Snake {
   private currentPosition;
   private verticalDirection = 0; // verticalDirection: if -1, then Snake is facing backwards. If 1, then Snake is facing forwards
   private horizontalDirection = 0; // horizontalDirection: left == -1 and right == 1 when snake is facing forwards
-  // opposite when snake is facing backwards b/c its left/right is NOT our left/right
+  // opposite when snake is facing backwards b/c its left/right is NOT my left/right
 
   constructor() {
     this.currentPosition = new Point(0, 0); // every new Snake starts @ a Point (0, 0)
@@ -29,11 +29,11 @@ class Snake {
   turnLeft() {
     // turn the snake left
     if (this.verticalDirection === -1) {
-      // snake is facing backwards, so its left is our right
+      // snake is facing backwards, so its left is my right
       this.horizontalDirection = 1;
       this.verticalDirection = 0; // snake is facing left, not backwards
     } else if (this.verticalDirection === 1) {
-      // snake is facing forwards, so its left is our left
+      // snake is facing forwards, so its left is my left
       this.horizontalDirection = -1;
       this.verticalDirection = 0; // snake is facing left, not backwards
     }
@@ -42,11 +42,11 @@ class Snake {
   turnRight() {
     // turn the snake right
     if (this.verticalDirection === -1) {
-      // snake is facing backwards, so its right is our left
+      // snake is facing backwards, so its right is my left
       this.horizontalDirection = -1;
       this.verticalDirection = 0; // snake is facing right, not backwards
     } else if (this.verticalDirection === 1) {
-      // snake is facing forwards, so its right is our right
+      // snake is facing forwards, so its right is my right
       this.horizontalDirection = 1;
       this.verticalDirection = 0; // snake is facing right, not backwards
     }
@@ -74,26 +74,26 @@ class Snake {
     } else if (lowercaseDirection === "left") {
       // move left. Snake must face left for this
       this.turnLeft(); // first step: turn left
-      // but is the snake's left our left or our right? Our right: horizontalDirection == 1, our left: horizontalDirection == -1
+      // My right: horizontalDirection == 1, My left: horizontalDirection == -1
       if (this.horizontalDirection === 1) {
-        // snake was facing backwards and turned to its left from there (in this case, our right), so I'll move on + x-axis
+        // snake was facing backwards and turned to its left from there (in this case, my right), so I'll move on + x-axis
         x += squares; // y-value doesn't change, x-value increments by 'squares'
         this.currentPosition = new Point(x, y); // new current position of Snake
       } else if (this.horizontalDirection === -1) {
-        // snake was facing forwards and turned to its/our left from there, so I'll move on - x-axis
+        // snake was facing forwards and turned to its/my left from there, so I'll move on - x-axis
         x -= squares; // y-value doesn't change, x-value decrements by 'squares'
         this.currentPosition = new Point(x, y); // new current position of Snake
       }
     } else if (lowercaseDirection === "right") {
       // move right
       this.turnRight(); // first step: turn right
-      // but is the snake facing its right or our right? Our right: horizontalDirection == 1, our left: horizontalDirection == -1
+      //My right: horizontalDirection == 1, My left: horizontalDirection == -1
       if (this.horizontalDirection === -1) {
-        // snake was facing backwards and turned to its right from there (in this case, our left), so I'll move on - x-axis
+        // snake was facing backwards and turned to its right from there (in this case, my left), so I'll move on - x-axis
         x -= squares; // y-value doesn't change, x-value decrements by 'squares'
         this.currentPosition = new Point(x, y); // new current position of Snake
       } else if (this.horizontalDirection === 1) {
-        // snake was facing forwards and turned to its/our right from there, so I'll move on the + x-axis
+        // snake was facing forwards and turned to its/my right from there, so I'll move on the + x-axis
         x += squares; // y-value doesn't change, x-value increments by 'squares'
         this.currentPosition = new Point(x, y); // new current position of Snake
       }
