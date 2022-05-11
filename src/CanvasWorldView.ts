@@ -9,7 +9,7 @@ export class CanvasWorldView implements IWorldView {
     this.scalingFactor = scalingFactor; // 'scalingFactor': # of pixels squared that each model grid coordinate represents
     this.worldCanvas = document.createElement("canvas"); // 'worldCanvas': create a new canvas element for the game
     this.context = this.worldCanvas.getContext("2d")!; // 'context': 2D context ("drawing paper") for the canvas element.
-    // -> this assignment is NOT null
+    // ! -> this assignment is NOT null
     document.body.appendChild(this.worldCanvas); // append the canvas element to page body
   }
   display(new_world: WorldModel): void {
