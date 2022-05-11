@@ -29,3 +29,7 @@ export class SnakeController {
   }
 }
 export default SnakeController;
+
+let _snek = new Snake();
+let _world = new WorldModel(_snek, 0, 0);
+let _controller = new SnakeController(_snek, _world);
